@@ -1,5 +1,36 @@
 # UI & UX Planning (Screen Inventory)
 
+## Design System Guidelines
+This project uses `shadcn/ui` structured components alongside a custom Tailwind CSS color palette and the Next.js `Geist` default fonts for a modern, high-contrast, enterprise aesthetic.
+
+### Typography
+- **Primary Font:** Geist Sans
+- **Monospace Font:** Geist Mono
+
+### Color Palette (Tailwind Variables & Full Reference)
+The application utilizes a custom "Brand Bold" palette derived from the following core brand colors:
+
+**Primary Brand Colors:**
+- **Red:** `#FF4646` (`var(--color-brand-red)`) - Primary actions, buttons, alerts.
+- **Black:** `#140F0F` (`var(--color-brand-dark)`) - Primary text, high-contrast surfaces.
+- **Off-White:** `#FDFDF8` (`var(--color-neutral-warm)`) - Cards, surfaces, table rows.
+- **Light Neutral:** `#EFEEEC` (`var(--color-neutral-light)`) - Global application background.
+- **Medium Neutral:** `#C8C2B8` (`var(--color-neutral-medium)`) - Borders, dividers.
+- **Dark Neutral:** `#7F746C` (`var(--color-neutral-dark)`) - Secondary text, metadata.
+- **Dark Brown:** `#2B1F1E` (`var(--color-brand-brown)`) - Secondary dark accents.
+
+**Secondary Brand Colors (Available for future use/semantic states):**
+- **Dark Green:** `#142A0E` (Success Text)
+- **Light Blue:** `#C0DDFF` (Info Background)
+- **Light Green/Yellow:** `#F3FED7` (Success Background)
+- **Yellow:** `#F4FF8E` (Warning Background)
+- **Dark Gray/Brown:** `#524A43` (Warning Text)
+
+### Status Colors (Semantic)
+Status indicators (New, In Progress, Completed, Overdue) use standard pale background variants with bold foregrounds from the secondary palette. Reference `globals.css` base layers for future additions.
+
+---
+
 ## Global / shared
 
 - App shell / navigation (role-aware)
