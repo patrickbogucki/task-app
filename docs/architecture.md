@@ -2,7 +2,7 @@
 
 **Purpose:** Define the high-level architecture of the task planning application
 
-- **Frontend:** Web application (Next.js with React & Tailwind CSS)
+- **Frontend:** Web application (Next.js with React, Tailwind CSS, & shadcn/ui components)
 - **Backend:** RESTful API (Node.js with Express.js)
 - **Database:** Relational database (PostgreSQL with Prisma ORM)
 - **Authentication:** JWT-based authentication with role-based access control (RBAC)
