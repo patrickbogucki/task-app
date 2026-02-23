@@ -49,7 +49,7 @@ export default function EducatorTaskDetailMockup() {
                             <svg className="w-5 h-5 text-brand-brown mr-3 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" /></svg>
                             <div>
                                 <p className="text-xs font-bold text-brand-brown uppercase tracking-wider mb-1">Note from Sarah (Store Lead)</p>
-                                <p className="text-sm text-brand-dark font-medium leading-relaxed">Hey Jess, please make sure the lighting is hitting the main mannequin exactly like the diagram shows. Text me if the vinyl doesn't stick.</p>
+                                <p className="text-sm text-brand-dark font-medium leading-relaxed">Hey Jess, please make sure the lighting is hitting the main mannequin exactly like the diagram shows. Text me if the vinyl doesn&apos;t stick.</p>
                             </div>
                         </div>
                     </div>
@@ -60,7 +60,7 @@ export default function EducatorTaskDetailMockup() {
 
                         <div className="prose prose-sm font-medium text-brand-dark leading-relaxed">
                             <p>Please update the front window displays with the new Q3 promotional materials delivered this week.</p>
-                            <p>Follow the attached planogram exactly. The primary focus is the new "Fall Forward" campaign.</p>
+                            <p>Follow the attached planogram exactly. The primary focus is the new &quot;Fall Forward&quot; campaign.</p>
                             <ul className="mt-4 space-y-2 list-disc pl-4 text-neutral-dark">
                                 <li><strong className="text-brand-dark">Remove</strong> all summer signage.</li>
                                 <li><strong className="text-brand-dark">Install</strong> the large vinyl cling on the primary entrance door.</li>

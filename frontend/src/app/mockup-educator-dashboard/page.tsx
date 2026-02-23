@@ -99,13 +99,21 @@ export default function EducatorDashboardMockup() {
                                         </span>
                                     </div>
                                     <p className="text-xs text-neutral-dark mb-3 line-clamp-1">Clear all items, sweep floors, check mirrors.</p>
-                                    <div className="flex items-center justify-between">
-                                        <div className="flex items-center text-xs text-neutral-dark font-medium">
-                                            <svg className="w-3.5 h-3.5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                                            Est. 15m
+                                    <div className="flex items-start md:items-center justify-between">
+                                        <div className="flex items-start">
+                                            <div className="bg-[#FFEBEB] p-2 rounded mr-3 mt-1 md:mt-0">
+                                                <svg className="w-5 h-5 text-[#B91C1C]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+                                            </div>
+                                            <div>
+                                                <p className="font-bold text-brand-dark mb-0.5" style={{ fontFamily: 'var(--font-geist-sans)' }}>Overdue: Q3 Display Confirmation</p>
+                                                <p className="text-sm text-neutral-dark mb-2">Store Manager requested confirmation 2 days ago.</p>
+                                                <span className="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-[#FFEBEB] text-[#B91C1C] border border-[#FECACA]">
+                                                    Action Required
+                                                </span>
+                                            </div>
                                         </div>
-                                        <button className="text-xs font-bold bg-neutral-light border border-neutral-medium text-brand-dark px-3 py-1 rounded shadow-sm hover:bg-neutral-medium/20 transition-colors">
-                                            Start
+                                        <button className="mt-3 md:mt-0 text-sm font-semibold text-brand-red hover:underline whitespace-nowrap">
+                                            Acknowledge Now
                                         </button>
                                     </div>
                                 </div>
@@ -123,7 +131,7 @@ export default function EducatorDashboardMockup() {
                             <div className="bg-neutral-warm rounded-xl border border-neutral-medium shadow-sm overflow-hidden relative cursor-pointer opacity-75">
                                 <div className="p-4">
                                     <div className="flex justify-between items-start mb-1">
-                                        <h3 className="text-base font-bold text-brand-dark">Restock Denim Wall (Men's)</h3>
+                                        <h3 className="text-base font-bold text-brand-dark">Restock Denim Wall (Men&apos;s)</h3>
                                         <span className="shrink-0 text-neutral-dark text-xs font-bold">
                                             Due 3PM
                                         </span>
