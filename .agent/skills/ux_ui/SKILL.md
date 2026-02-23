@@ -36,6 +36,10 @@ Always use the CSS variables mapped below in Tailwind utility classes (e.g., `bg
 
 ## 4. Layout & Application Structure
 - **Global Constraints:** Role-aware app shell, global task search, notifications center, and standardized error/empty states.
+- **Premium App Shell Glow:** The main application area should be framed with a glowing aura (e.g., a subtle blue/purple outer shadow or gradient border) that creates a dynamic, premium aesthetic.
+- **Component Geometry:** Use generous border radii for large structural elements and cards (e.g., `rounded-2xl` or `rounded-3xl` for main content areas and KPI cards). Avoid sharp corners on main components.
+- **Depth and Shadows:** Apply subtle drop shadows to cards to lift them slightly off the background (`bg-neutral-light`).
+- **Status Badges:** Use small, bold, pill-shaped (`rounded-md` or `rounded-full`) badges for statuses with soft background colors and contrasting dark text (e.g., "ACKNOWLEDGED" with light green/yellow bg and dark green text).
 - **Mobile Responsiveness:** Ensure tables, lists, and forms degrade gracefully to 1-column layouts on mobile viewports.
 - **Typography Hierarchy:** 
   - Restrict `h1` tags to a single instance per page.
@@ -53,3 +57,5 @@ When defining components, consider the specific user context and access level:
 - Add unique/descriptive and semantic classes/ids to complex layout structures.
 - Use smooth transitions (`transition-all`, `duration-200`) for hover states on buttons and links to make them feel responsive.
 - Do not mix raw hex colors (`#FF4646`) if the CSS custom variable counterpart (`border-brand-red`, `text-brand-red`) is available via Tailwind.
+- **Use the Full Palette (Avoid Monochromatic Designs):** Do not default to boring, entirely black-and-white screens. Actively leverage the full "Brand Bold" color palette (like `var(--color-brand-red)`, `var(--color-brand-brown)`, and the various neutral tones) to create visually rich, engaging, and premium interfaces.
+- **Tasteful Color Distribution:** While using the full palette, ensure colors are distributed tastefully. Use the off-white and light neutral colors for large structural surfaces to maintain readability and contrast against the darker, punchy accent colors.
