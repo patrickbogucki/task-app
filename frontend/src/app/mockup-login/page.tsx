@@ -70,7 +70,7 @@ export default function LoginMockup() {
                                     autoComplete="email"
                                     required
                                     placeholder="name@company.com"
-                                    className="block w-full appearance-none rounded-md border border-neutral-medium px-4 py-3 text-brand-dark placeholder-neutral-dark focus:border-brand-red focus:outline-none focus:ring-1 focus:ring-brand-red sm:text-sm bg-neutral-light shadow-sm transition-colors"
+                                    className="block w-full appearance-none rounded-xl border border-neutral-medium px-4 py-3 text-brand-dark placeholder-neutral-dark focus:border-brand-red focus:outline-none focus:ring-2 focus:ring-brand-red/20 sm:text-sm bg-neutral-light shadow-sm transition-all duration-200"
                                 />
                             </div>
                         </div>
@@ -87,7 +87,7 @@ export default function LoginMockup() {
                                     autoComplete="current-password"
                                     required
                                     placeholder="••••••••"
-                                    className="block w-full appearance-none rounded-md border border-neutral-medium px-4 py-3 text-brand-dark placeholder-neutral-dark focus:border-brand-red focus:outline-none focus:ring-1 focus:ring-brand-red sm:text-sm bg-neutral-light shadow-sm transition-colors"
+                                    className="block w-full appearance-none rounded-xl border border-neutral-medium px-4 py-3 text-brand-dark placeholder-neutral-dark focus:border-brand-red focus:outline-none focus:ring-2 focus:ring-brand-red/20 sm:text-sm bg-neutral-light shadow-sm transition-all duration-200"
                                 />
                             </div>
                         </div>
@@ -115,7 +115,7 @@ export default function LoginMockup() {
                         <div>
                             <button
                                 type="submit"
-                                className="flex w-full justify-center items-center space-x-2 rounded-md border border-transparent bg-brand-red py-3 px-4 text-sm font-bold text-neutral-warm shadow-md hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-brand-red focus:ring-offset-2 transition-all transform active:scale-[0.98]"
+                                className="flex w-full justify-center items-center space-x-2 rounded-full border border-transparent bg-brand-red py-3.5 px-4 text-sm font-bold text-neutral-warm shadow-md hover:bg-[#E03E3E] hover:shadow-lg hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-brand-red focus:ring-offset-2 transition-all duration-200 transform active:scale-[0.98]"
                             >
                                 <span>Sign in to account</span>
                                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -136,13 +136,13 @@ export default function LoginMockup() {
                     </div>
 
                     <div className="mt-6 grid grid-cols-2 gap-3">
-                        <button type="button" className="w-full inline-flex justify-center rounded-md border border-neutral-medium bg-neutral-light px-4 py-2.5 text-sm font-medium text-brand-brown shadow-sm hover:bg-neutral-medium transition-colors">
+                        <button type="button" className="w-full inline-flex justify-center rounded-full border border-neutral-medium bg-neutral-light px-4 py-2.5 text-sm font-bold text-brand-brown shadow-sm hover:bg-neutral-medium hover:border-brand-red/30 transition-all duration-200">
                             HQ Admin
                         </button>
-                        <button type="button" className="w-full inline-flex justify-center rounded-md border border-neutral-medium bg-neutral-light px-4 py-2.5 text-sm font-medium text-brand-brown shadow-sm hover:bg-neutral-medium transition-colors">
+                        <button type="button" className="w-full inline-flex justify-center rounded-full border border-neutral-medium bg-neutral-light px-4 py-2.5 text-sm font-bold text-brand-brown shadow-sm hover:bg-neutral-medium hover:border-brand-red/30 transition-all duration-200">
                             Store Lead
                         </button>
-                        <button type="button" className="w-full inline-flex justify-center rounded-md border border-neutral-medium bg-neutral-light px-4 py-2.5 text-sm font-medium text-brand-brown shadow-sm hover:bg-neutral-medium transition-colors col-span-2 hover:border-brand-red">
+                        <button type="button" className="w-full inline-flex justify-center rounded-full border border-neutral-medium bg-neutral-light px-4 py-2.5 text-sm font-bold text-brand-brown shadow-sm hover:bg-neutral-medium hover:border-brand-red/30 transition-all duration-200 col-span-2">
                             Educator
                         </button>
                     </div>
