@@ -1,0 +1,135 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  Admin
+  Headquarters
+  StoreLead
+  Educator
+}
+
+enum Priority {
+  Low
+  Medium
+  High
+}
+
+enum Status {
+  NotStarted
+  InProgress
+  Completed
+}
+
+model User {
+  id                    String                @id @default(uuid())
+  name                  String
+  email                 String                @unique
+  role                  Role
+  access_level          Int                   // 1-4
+  location_id           String?
+  location              Location?             @relation("UserLocation", fields: [location_id], references: [id])
+  
+  created_tasks         Task[]                @relation("CreatedTasks")
+  assigned_tasks        TaskUserAssignment[] 
+  acknowledgements      TaskAcknowledgement[]
+  completions           TaskCompletion[]
+  managed_locations     Location[]            @relation("StoreManager")
+
+  created_at            DateTime              @default(now())
+  updated_at            DateTime              @updatedAt
+}
+
+model Location {
+  id                    String                @id @default(uuid())
+  name                  String
+  address               String
+  
+  store_manager_id      String?
+  store_manager         User?                 @relation("StoreManager", fields: [store_manager_id], references: [id])
+  users                 User[]                @relation("UserLocation")
+  assigned_tasks        TaskLocationAssignment[]
+
+  created_at            DateTime              @default(now())
+  updated_at            DateTime              @updatedAt
+}
+
+model Task {
+  id                    String                @id @default(uuid())
+  title                 String
+  description           String?
+  
+  created_by            String
+  creator               User                  @relation("CreatedTasks", fields: [created_by], references: [id])
+  
+  assigned_to_role      Role[]
+  location_assignments  TaskLocationAssignment[]
+  user_assignments      TaskUserAssignment[]
+  
+  parent_task_id        String?
+  parent_task           Task?                 @relation("Subtasks", fields: [parent_task_id], references: [id])
+  subtasks              Task[]                @relation("Subtasks")
+  
+  due_date              DateTime?
+  priority              Priority              @default(Medium)
+  status                Status                @default(NotStarted)
+  
+  ack_required          Boolean               @default(true)
+  delegatable           Boolean               @default(true)
+  
+  // Delegation tracking
+  delegated_from_task_id String?
+  delegated_from_task   Task?                 @relation("Delegation", fields: [delegated_from_task_id], references: [id])
+  delegated_tasks       Task[]                @relation("Delegation")
+  
+  acknowledgements      TaskAcknowledgement[]
+  completions           TaskCompletion[]
+
+  created_at            DateTime              @default(now())
+  updated_at            DateTime              @updatedAt
+  completed_at          DateTime?
+}
+
+// Join Tables for arrays
+model TaskLocationAssignment {
+  task_id      String
+  location_id  String
+  task         Task     @relation(fields: [task_id], references: [id], onDelete: Cascade)
+  location     Location @relation(fields: [location_id], references: [id], onDelete: Cascade)
+  
+  @@id([task_id, location_id])
+}
+
+model TaskUserAssignment {
+  task_id      String
+  user_id      String
+  task         Task     @relation(fields: [task_id], references: [id], onDelete: Cascade)
+  user         User     @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  
+  @@id([task_id, user_id])
+}
+
+model TaskAcknowledgement {
+  id              String   @id @default(uuid())
+  task_id         String
+  user_id         String
+  task            Task     @relation(fields: [task_id], references: [id], onDelete: Cascade)
+  user            User     @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  acknowledged_at DateTime @default(now())
+  notes           String?
+}
+
+model TaskCompletion {
+  id              String   @id @default(uuid())
+  task_id         String
+  user_id         String
+  task            Task     @relation(fields: [task_id], references: [id], onDelete: Cascade)
+  user            User     @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  completed_at    DateTime @default(now())
+  notes           String?
+}
